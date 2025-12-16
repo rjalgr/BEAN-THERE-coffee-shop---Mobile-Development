@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFCDB0">
+
+    <!-- Header -->
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Menu Button -->
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_back"
+            android:contentDescription="back"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+
+        <!-- Settings Button -->
+        <ImageView
+            android:id="@+id/btnSettings"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_settings"
+            android:contentDescription="Settings"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+
+    </LinearLayout>
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/headerLayout"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingBottom="24dp">
+
+            <!-- Profile Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PROFILE"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#3D2817"
+                android:fontFamily="sans-serif-black"
+                android:letterSpacing="0.05"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"/>
+
+            <!-- Profile Picture -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="24dp"
+                app:cardCornerRadius="60dp"
+                app:cardElevation="8dp">
+
+                <ImageView
+                    android:id="@+id/ivProfilePicture"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/profile"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="Profile Picture"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Name -->
+            <TextView
+                android:id="@+id/tvProfileName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Christian Calubad"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#3D2817"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"/>
+
+            <!-- Username -->
+            <TextView
+                android:id="@+id/tvProfileUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@Gocruzk"
+                android:textSize="16sp"
+                android:textColor="#3D2817"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="4dp"/>
+
+            <!-- Recently Ordered Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RECENTLY ORDERED"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#3D2817"
+                android:fontFamily="sans-serif-black"
+                android:layout_marginTop="32dp"/>
+
+            <TextView
+                android:id="@+id/emptyRecentText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No recent orders"
+                android:textSize="14sp"
+                android:textColor="#3D2817"
+                android:layout_marginTop="16dp"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:id="@+id/recentOrdersContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp"/>
+
+            <!-- Top Coffee Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TOP COFFEE"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#3D2817"
+                android:fontFamily="sans-serif-black"
+                android:layout_marginTop="32dp"/>
+
+            <TextView
+                android:id="@+id/emptyTopText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No top coffee yet"
+                android:textSize="14sp"
+                android:textColor="#3D2817"
+                android:layout_marginTop="16dp"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:id="@+id/topCoffeeContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp"/>
+
+            <!-- Logout Button - Centered for consistency with other elements -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="24dp"
+                android:text="Logout"
+                android:textSize="14sp"
+                android:textColor="#000000"
+                app:backgroundTint="#FDAC98"
+                app:strokeColor="#3D2817"
+                app:strokeWidth="1dp"
+                app:cornerRadius="12dp"
+                android:layout_marginBottom="24dp"/>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <!-- Bottom Navigation -->
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:orientation="horizontal"
+        android:background="@drawable/bottom_nav_background"
+        android:gravity="center"
+        android:paddingHorizontal="60dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/btnHome"
+            android:layout_width="0dp"
+            android:layout_height="28dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_home"
+            android:contentDescription="Home"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+
+        <ImageView
+            android:id="@+id/btnCart"
+            android:layout_width="0dp"
+            android:layout_height="28dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_cart"
+            android:contentDescription="Cart"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+
+        <ImageView
+            android:id="@+id/btnProfile"
+            android:layout_width="0dp"
+            android:layout_height="28dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_profile"
+            android:contentDescription="Profile"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="32dp"
+    app:cardCornerRadius="30dp"
+    app:cardElevation="16dp"
+    app:cardBackgroundColor="#FFCDB0">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center">
+
+        <!-- Close buttons at top -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Back Button -->
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:contentDescription="Back"
+                android:background="?attr/selectableItemBackgroundBorderless"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+
+            <!-- Cart Button -->
+            <ImageView
+                android:id="@+id/btnCartDialog"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_cart"
+                android:contentDescription="Cart"
+                android:background="?attr/selectableItemBackgroundBorderless"/>
+
+        </LinearLayout>
+
+        <!-- Coffee Image -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="100dp"
+            app:cardElevation="8dp">
+
+            <ImageView
+                android:id="@+id/ivCoffeeImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:contentDescription="Coffee"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Coffee Name -->
+        <TextView
+            android:id="@+id/tvCoffeeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LATTE"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="#3D2817"
+            android:fontFamily="serif"
+            android:layout_marginTop="24dp"/>
+
+        <!-- Price -->
+        <TextView
+            android:id="@+id/tvCoffeePrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PHP: 120"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#3D2817"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Description -->
+        <TextView
+            android:id="@+id/tvCoffeeDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="&quot;Latte&quot; means milk in Italian — so caffè latte literally means &quot;coffee with milk.&quot;"
+            android:textSize="16sp"
+            android:textColor="#3D2817"
+            android:textAlignment="center"
+            android:layout_marginTop="16dp"
+            android:paddingHorizontal="16dp"/>
+
+        <!-- Order Now Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnOrderNow"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="ORDER NOW"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            app:backgroundTint="#FDAC98"
+            app:strokeColor="#3D2817"
+            app:strokeWidth="2dp"
+            app:cornerRadius="30dp"
+            android:layout_marginTop="24dp"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
